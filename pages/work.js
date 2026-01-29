@@ -9,23 +9,40 @@ export default function Work() {
   const workExperience = [
     {
       id: 1,
-      company: "Tech Company",
-      position: "Software Development Intern",
-      duration: "June 2024 - August 2024",
+      company: "AmberFlux Edge AI pvt Ltd",
+      position: "Backend Software Development Intern",
+      duration: "June 2025 - August 2025",
       location: "India",
       type: "Internship",
       description: [
-        "Developed web applications using React and JavaScript frameworks",
+        "Developed web applications using FastAPI frameworks",
         "Collaborated with senior developers on mobile app development projects",
         "Implemented responsive UI components and optimized application performance",
         "Gained hands-on experience with version control systems and agile development methodologies"
       ],
-      technologies: ["React", "JavaScript", "HTML", "CSS", "Git", "React Native", "Node.js"],
+      technologies: ["FastAPI", "Python", "HTML", "CSS", "Git", "React Native", "Node.js"],
       achievements: [
-        "🚀 Successfully completed 3 major project deliverables",
-        "📱 Contributed to mobile application development",
-        "💻 Improved code quality through peer reviews and testing"
+        " Successfully made 13 APIs",
+        " Contributed to mobile application development",
+        " Improved code quality through peer reviews and testing"
       ]
+    },
+    {
+      id: 2,
+      company: "Eklavya.me",
+      position: "Games Developer Intern",
+      duration: "November 2025 - February 2026",
+      location: "Remote",
+      type: "Internship",
+      description: [
+        "Developed engaging games using phaser and react on the web",
+        "Collaborated with a team of developers to design and implement game features",
+        "Optimized game performance and user experience through testing and feedback",
+        "Learned about game development best practices and industry standards"
+      ],
+      technologies: ["JavaScript", "Phaser", "React", "HTML5", "CSS3", "Git"],
+      achievements: [
+        " Successfully developed and launched 6 web-based games",]
     }
   ]
 

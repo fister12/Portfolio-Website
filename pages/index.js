@@ -109,12 +109,27 @@ export default function Home({ posts }) {
           </div>
 
           {/* Main Tech Stack */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-12">
+          {/* Python Bar - Full Width */}
+          <div className="mb-6">
+            <div key="Python" className="card">
+              <div className="flex items-center gap-2 mb-3">
+                <TechIcon name="Python" className="w-6 h-6" />
+                <div className="text-sm font-medium text-white">Python</div>
+              </div>
+              <div className="w-full bg-neutral-800 rounded-full h-1.5">
+                <div 
+                  className="bg-gradient-to-r from-green-400 to-green-600 h-1.5 rounded-full transition-all duration-1000 ease-out"
+                  style={{ width: '88%' }}
+                ></div>
+              </div>
+            </div>
+          </div>
+
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-6 mb-12">
             {[
               { name: 'React', level: '92%', color: 'from-cyan-400 to-blue-500' },
               { name: 'JavaScript', level: '90%', color: 'from-yellow-400 to-yellow-600' },
-              { name: 'React Native', level: '85%', color: 'from-blue-400 to-purple-500' },
-              { name: 'Python', level: '88%', color: 'from-green-400 to-green-600' }
+              { name: 'React Native', level: '85%', color: 'from-blue-400 to-purple-500' }
             ].map((skill, i) => (
               <div key={skill.name} className={`card fade-in-delay-${i + 1}`}>
                 <div className="flex items-center gap-2 mb-3">
