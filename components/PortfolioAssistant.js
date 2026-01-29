@@ -4,30 +4,30 @@ import { X, MessageCircle, Send } from 'lucide-react'
 
 const chatResponses = {
   greeting: [
-    "Hi there! I'm YourName's Portfolio Assistant. How can I help you learn more about their work?",
-    "Hello! I'm here to help you navigate YourName's portfolio. What would you like to know?",
-    "Welcome! I can tell you about YourName's projects, experience, or skills. What interests you?"
+    "Hello, I am a chatbot. How can I help?",
+    "Hi there! How can I help you today?",
+    "Welcome! How can I assist you?"
   ],
   projects: [
-    "YourName has worked on various projects including web applications, e-commerce platforms, and mobile-first PWAs. Would you like to see a specific project?",
+    "Aaditya has worked on various projects including web applications, e-commerce platforms, and mobile-first PWAs. Would you like to see a specific project?",
     "The featured projects showcase full-stack development skills with technologies like Next.js, React, and Node.js. Check out the Projects page for details!"
   ],
   skills: [
-    "YourName specializes in TypeScript, React, Next.js, and Node.js. They also have experience with PostgreSQL, Tailwind CSS, and modern deployment practices.",
+    "Aaditya specializes in TypeScript, React, Next.js, and Node.js. They also have experience with PostgreSQL, Tailwind CSS, and modern deployment practices.",
     "Key technical skills include full-stack JavaScript development, database design, API development, and UI/UX implementation."
   ],
   experience: [
-    "YourName has experience in both frontend and backend development, with a focus on creating scalable web applications and seamless user experiences.",
+    "Aaditya has experience in both frontend and backend development, with a focus on creating scalable web applications and seamless user experiences.",
     "They've worked on various projects ranging from simple websites to complex full-stack applications with real-time features."
   ],
   contact: [
-    "You can reach YourName through the contact page, email, or book a free consultation call. They're always open to discussing new opportunities!",
-    "The best way to get in touch is via email or through the contact form. YourName typically responds within 24 hours."
+    "You can reach Aaditya through the contact page, email, or book a free consultation call. They're always open to discussing new opportunities!",
+    "The best way to get in touch is via email or through the contact form. Aaditya    typically responds within 24 hours."
   ],
   default: [
-    "I'd be happy to help! You can ask me about YourName's projects, skills, experience, or how to get in touch.",
-    "Feel free to ask about anything related to YourName's portfolio - projects, technical skills, or collaboration opportunities.",
-    "I'm here to help! Try asking about specific projects, technologies YourName works with, or how to start a collaboration."
+    "I'd be happy to help! You can ask me about Aaditya's projects, skills, experience, or how to get in touch.",
+    "Feel free to ask about anything related to Aaditya's portfolio - projects, technical skills, or collaboration opportunities.",
+    "I'm here to help! Try asking about specific projects, technologies Aaditya works with, or how to start a collaboration."
   ]
 }
 
@@ -36,7 +36,7 @@ export default function PortfolioAssistant() {
   const [messages, setMessages] = useState([
     { 
       id: 1, 
-      text: "Hi! I'm YourName's Portfolio Assistant. Ask me anything about their work, skills, or experience!", 
+      text: "Hello, I am a chatbot. How can I help?", 
       sender: 'bot', 
       timestamp: Date.now() 
     }
