@@ -1,16 +1,23 @@
 import Link from 'next/link'
-import { motion } from 'framer-motion'
+import { motion, AnimatePresence } from 'framer-motion'
 import SEO from './SEO'
 import ThemeToggle from './ThemeToggle'
 import PortfolioAssistant from './PortfolioAssistant'
 import { useState, useEffect } from 'react'
+import { Menu, X } from 'lucide-react'
 
 export default function Layout({ children, meta }) {
   const [mounted, setMounted] = useState(false)
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
   useEffect(() => {
     setMounted(true)
   }, [])
+
+  // Close mobile menu on route change
+  useEffect(() => {
+    setMobileMenuOpen(false)
+  }, [children])
 
   if (!mounted) return null
 
@@ -36,7 +43,7 @@ export default function Layout({ children, meta }) {
             <div className="text-sm text-slate-500 dark:text-neutral-500">Full Stack & Mobile Developer</div>
           </motion.div>
 
-          <nav className="flex items-center space-x-8">
+          <nav className="flex items-center space-x-4 md:space-x-8">
             <motion.div 
               className="hidden md:flex items-center space-x-6"
               initial={{ x: 20, opacity: 0 }}
@@ -67,7 +74,50 @@ export default function Layout({ children, meta }) {
             >
               <ThemeToggle />
             </motion.div>
+
+            {/* Mobile Menu Toggle */}
+            <motion.button
+              initial={{ scale: 0, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              transition={{ duration: 0.3, delay: 0.4 }}
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              className="md:hidden p-2 text-slate-600 dark:text-neutral-400 hover:text-slate-900 dark:hover:text-white transition-colors"
+              aria-label="Toggle menu"
+            >
+              {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+            </motion.button>
           </nav>
+
+          {/* Mobile Menu Overlay */}
+          <AnimatePresence>
+            {mobileMenuOpen && (
+              <motion.div
+                initial={{ opacity: 0, height: 0 }}
+                animate={{ opacity: 1, height: 'auto' }}
+                exit={{ opacity: 0, height: 0 }}
+                transition={{ duration: 0.3 }}
+                className="absolute top-full left-0 right-0 bg-white dark:bg-neutral-950 border-b border-slate-200 dark:border-neutral-800 md:hidden overflow-hidden"
+              >
+                <div className="container py-4 flex flex-col space-y-4">
+                  <Link href="/" onClick={() => setMobileMenuOpen(false)} className="text-slate-600 dark:text-neutral-400 hover:text-slate-900 dark:hover:text-white transition-colors duration-200 py-2">
+                    Home
+                  </Link>
+                  <Link href="/work" onClick={() => setMobileMenuOpen(false)} className="text-slate-600 dark:text-neutral-400 hover:text-slate-900 dark:hover:text-white transition-colors duration-200 py-2">
+                    Work
+                  </Link>
+                  <Link href="/projects" onClick={() => setMobileMenuOpen(false)} className="text-slate-600 dark:text-neutral-400 hover:text-slate-900 dark:hover:text-white transition-colors duration-200 py-2">
+                    Projects
+                  </Link>
+                  <Link href="/tags" onClick={() => setMobileMenuOpen(false)} className="text-slate-600 dark:text-neutral-400 hover:text-slate-900 dark:hover:text-white transition-colors duration-200 py-2">
+                    Blog
+                  </Link>
+                  <Link href="/contact" onClick={() => setMobileMenuOpen(false)} className="text-slate-600 dark:text-neutral-400 hover:text-slate-900 dark:hover:text-white transition-colors duration-200 py-2">
+                    Contact
+                  </Link>
+                </div>
+              </motion.div>
+            )}
+          </AnimatePresence>
         </div>
       </motion.header>
 

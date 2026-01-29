@@ -68,23 +68,23 @@ const projects = [
 export default function Projects() {
   return (
     <Layout meta={{ title: 'Projects — Aaditya Kapruwan', description: 'A collection of my latest work and side projects.' }}>
-      <div className="container py-16">
+      <div className="container py-8 sm:py-12 md:py-16">
         {/* Header */}
-        <div className="text-center mb-16 fade-in">
-          <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
+        <div className="text-center mb-8 sm:mb-12 md:mb-16 fade-in">
+          <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4 sm:mb-6">
             My Projects
           </h1>
-          <p className="text-lg text-neutral-400 max-w-2xl mx-auto leading-relaxed">
+          <p className="text-base sm:text-lg text-neutral-400 max-w-2xl mx-auto leading-relaxed px-2">
             A collection of my latest work, side projects, and experiments. 
             Each project showcases different technologies and approaches to solving real-world problems.
           </p>
         </div>
 
         {/* Projects Grid */}
-        <div className="grid gap-8">
+        <div className="grid gap-4 sm:gap-6 md:gap-8">
           {projects.map((project, index) => (
             <div key={project.id} className={`card group fade-in-delay-${index + 1}`}>
-              <div className="grid md:grid-cols-2 gap-8 items-center">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 md:gap-8 items-center">
                 {/* Project Image */}
                 <div className="relative overflow-hidden rounded-lg">
                   <div className="aspect-video bg-gradient-to-br from-blue-600 to-purple-600 rounded-lg group-hover:scale-105 transition-transform duration-300">
@@ -108,27 +108,27 @@ export default function Projects() {
 
                 {/* Project Info */}
                 <div>
-                  <h2 className="text-2xl font-bold text-white mb-4 group-hover:text-neutral-300 transition-colors duration-200">
+                  <h2 className="text-xl sm:text-2xl font-bold text-white mb-3 sm:mb-4 group-hover:text-neutral-300 transition-colors duration-200">
                     {project.title}
                   </h2>
                   
-                  <p className="text-neutral-400 mb-6 leading-relaxed">
+                  <p className="text-sm sm:text-base text-neutral-400 mb-4 sm:mb-6 leading-relaxed">
                     {project.description}
                   </p>
 
                   {/* Tags */}
-                  <div className="flex flex-wrap gap-2 mb-6">
+                  <div className="flex flex-wrap gap-1.5 sm:gap-2 mb-4 sm:mb-6">
                     {project.tags.map((tag) => (
                       <TechBadge key={tag} name={tag} />
                     ))}
                   </div>
 
                   {/* Links */}
-                  <div className="flex flex-wrap gap-4">
-                    <Link href={project.demo} className="btn-primary">
+                  <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
+                    <Link href={project.demo} className="btn-primary text-center">
                       Live Demo →
                     </Link>
-                    <Link href={project.github} className="btn-secondary">
+                    <Link href={project.github} className="btn-secondary text-center">
                       GitHub
                     </Link>
                   </div>

@@ -109,10 +109,11 @@ export default function PortfolioAssistant() {
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.9 }}
         onClick={() => setIsOpen(true)}
-        className="fixed bottom-6 right-6 w-14 h-14 bg-gradient-to-r from-blue-500 to-purple-600 text-white rounded-full shadow-lg hover:shadow-xl transition-shadow duration-300 flex items-center justify-center z-50"
+        className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 w-12 h-12 sm:w-14 sm:h-14 bg-gradient-to-r from-blue-500 to-purple-600 text-white rounded-full shadow-lg hover:shadow-xl transition-shadow duration-300 flex items-center justify-center z-50"
         style={{ display: isOpen ? 'none' : 'flex' }}
       >
-        <MessageCircle size={24} />
+        <MessageCircle size={20} className="sm:hidden" />
+        <MessageCircle size={24} className="hidden sm:block" />
       </motion.button>
 
       {/* Chat Window */}
@@ -122,7 +123,7 @@ export default function PortfolioAssistant() {
             initial={{ opacity: 0, y: 100, scale: 0.8 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 100, scale: 0.8 }}
-            className="fixed bottom-6 right-6 w-96 max-w-[90vw] h-[500px] bg-neutral-900 border border-neutral-700 rounded-2xl shadow-2xl z-50 flex flex-col overflow-hidden"
+            className="fixed bottom-0 right-0 sm:bottom-6 sm:right-6 w-full sm:w-96 sm:max-w-[90vw] h-[100dvh] sm:h-[500px] sm:rounded-2xl bg-neutral-900 border-0 sm:border border-neutral-700 shadow-2xl z-50 flex flex-col overflow-hidden"
           >
             {/* Header */}
             <div className="bg-gradient-to-r from-blue-500 to-purple-600 p-4 flex items-center justify-between">

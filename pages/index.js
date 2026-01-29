@@ -42,57 +42,57 @@ export default function Home({ posts }) {
       <section className="hero">
         <div className="container">
           <div className="fade-in">
-            <div className="flex items-center gap-2 mb-6">
+            <div className="flex flex-col sm:flex-row items-center sm:items-start gap-4 sm:gap-6 mb-6">
               <Image
                 src="/images/910025e4-00f2-4de6-aa19-125451250da8.png"
                 alt="Aaditya Kapruwan"
                 width={300}
                 height={300}
-                className="rounded-full"
+                className="rounded-full w-32 h-32 sm:w-48 sm:h-48 md:w-64 md:h-64 lg:w-[300px] lg:h-[300px] object-cover flex-shrink-0"
               />
-              <h1 className="hero-title">
+              <h1 className="hero-title text-center sm:text-left">
                 Hi, I'm Aaditya Kapruwan — backend and full stack developer
               </h1>
             </div>
           </div>
           
           <div className="fade-in-delay-1">
-            <p className="hero-subtitle mb-6">
+            <p className="hero-subtitle mb-6 text-center sm:text-left">
               Motivated programmer passionate about machine learning, data science, mobile development, 
               and web development. I love solving problems through code and building innovative cross-platform solutions.
             </p>
             
             {/* Tech Stack Preview */}
-            <div className="flex flex-wrap gap-3 mb-8">
-              <TechIcon name="React" showName={true} className="w-5 h-5" />
-              <TechIcon name="React Native" showName={true} className="w-5 h-5" />
-              <TechIcon name="JavaScript" showName={true} className="w-5 h-5" />
-              <TechIcon name="Python" showName={true} className="w-5 h-5" />
-              <TechIcon name="Java" showName={true} className="w-5 h-5" />
+            <div className="flex flex-wrap justify-center sm:justify-start gap-2 sm:gap-3 mb-8">
+              <TechIcon name="React" showName={true} className="w-4 h-4 sm:w-5 sm:h-5" />
+              <TechIcon name="React Native" showName={true} className="w-4 h-4 sm:w-5 sm:h-5" />
+              <TechIcon name="JavaScript" showName={true} className="w-4 h-4 sm:w-5 sm:h-5" />
+              <TechIcon name="Python" showName={true} className="w-4 h-4 sm:w-5 sm:h-5" />
+              <TechIcon name="Java" showName={true} className="w-4 h-4 sm:w-5 sm:h-5" />
             </div>
           </div>
 
-          <div className="flex flex-col sm:flex-row gap-4 fade-in-delay-2">
-            <Link href="#projects" className="btn-primary">
+          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 fade-in-delay-2 items-center sm:items-start">
+            <Link href="#projects" className="btn-primary w-full sm:w-auto text-center">
               View My Work
             </Link>
-            <Link href="/contact" className="btn-secondary">
+            <Link href="/contact" className="btn-secondary w-full sm:w-auto text-center">
               Get in Touch
             </Link>
           </div>
 
-          <div className="mt-12 flex flex-wrap gap-6 fade-in-delay-3">
+          <div className="mt-8 sm:mt-12 flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-6 fade-in-delay-3 items-center sm:items-start">
             <div className="flex items-center space-x-2">
               <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
-              <span className="text-sm text-neutral-400">Open to opportunities</span>
+              <span className="text-xs sm:text-sm text-neutral-400">Open to opportunities</span>
             </div>
             <div className="flex items-center space-x-2">
               <div className="w-2 h-2 bg-blue-400 rounded-full"></div>
-              <span className="text-sm text-neutral-400">Full Stack & Mobile Developer</span>
+              <span className="text-xs sm:text-sm text-neutral-400">Full Stack & Mobile Developer</span>
             </div>
             <div className="flex items-center space-x-2">
               <div className="w-2 h-2 bg-purple-400 rounded-full"></div>
-              <span className="text-sm text-neutral-400">India 🇮🇳</span>
+              <span className="text-xs sm:text-sm text-neutral-400">India 🇮🇳</span>
             </div>
           </div>
         </div>
@@ -125,7 +125,7 @@ export default function Home({ posts }) {
             </div>
           </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-6 mb-12">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6 mb-12">
             {[
               { name: 'React', level: '92%', color: 'from-cyan-400 to-blue-500' },
               { name: 'JavaScript', level: '90%', color: 'from-yellow-400 to-yellow-600' },
@@ -133,7 +133,7 @@ export default function Home({ posts }) {
             ].map((skill, i) => (
               <div key={skill.name} className={`card fade-in-delay-${i + 1}`}>
                 <div className="flex items-center gap-2 mb-3">
-                  <TechIcon name={skill.name} className="w-6 h-6" />
+                  <TechIcon name={skill.name} className="w-5 h-5 sm:w-6 sm:h-6" />
                   <div className="text-sm font-medium text-white">{skill.name}</div>
                 </div>
                 <div className="w-full bg-neutral-800 rounded-full h-1.5">
@@ -147,10 +147,10 @@ export default function Home({ posts }) {
           </div>
 
           {/* Additional Technologies */}
-          <div className="grid md:grid-cols-3 gap-8 fade-in-delay-2">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6 md:gap-8 fade-in-delay-2">
             <div className="card">
-              <h3 className="text-white font-semibold mb-4 flex items-center gap-2">
-                <Smartphone className="w-5 h-5" />
+              <h3 className="text-white font-semibold mb-4 flex items-center gap-2 text-sm sm:text-base">
+                <Smartphone className="w-4 h-4 sm:w-5 sm:h-5" />
                 Mobile Development
               </h3>
               <AnimatedTechStack 
@@ -159,8 +159,8 @@ export default function Home({ posts }) {
             </div>
             
             <div className="card">
-              <h3 className="text-white font-semibold mb-4 flex items-center gap-2">
-                <Globe className="w-5 h-5" />
+              <h3 className="text-white font-semibold mb-4 flex items-center gap-2 text-sm sm:text-base">
+                <Globe className="w-4 h-4 sm:w-5 sm:h-5" />
                 Web Development
               </h3>
               <AnimatedTechStack 
@@ -168,9 +168,9 @@ export default function Home({ posts }) {
               />
             </div>
             
-            <div className="card">
-              <h3 className="text-white font-semibold mb-4 flex items-center gap-2">
-                <Database className="w-5 h-5" />
+            <div className="card sm:col-span-2 md:col-span-1">
+              <h3 className="text-white font-semibold mb-4 flex items-center gap-2 text-sm sm:text-base">
+                <Database className="w-4 h-4 sm:w-5 sm:h-5" />
                 Backend & Data Science
               </h3>
               <AnimatedTechStack 

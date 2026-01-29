@@ -70,24 +70,24 @@ export default function Work() {
         animate="visible"
       >
         {/* Header */}
-        <motion.div className="mb-16" variants={itemVariants}>
-          <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
+        <motion.div className="mb-8 sm:mb-12 md:mb-16" variants={itemVariants}>
+          <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4 sm:mb-6">
             Work Experience
           </h1>
-          <p className="text-lg text-neutral-400 max-w-2xl leading-relaxed">
+          <p className="text-base sm:text-lg text-neutral-400 max-w-2xl leading-relaxed">
             My journey as a motivated programmer, building innovative web and mobile solutions across various platforms.
           </p>
         </motion.div>
 
-        <div className="grid lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
           {/* Job List */}
           <motion.div className="lg:col-span-1" variants={itemVariants}>
-            <div className="space-y-2">
+            <div className="flex lg:flex-col gap-2 overflow-x-auto pb-2 lg:pb-0 lg:space-y-2 -mx-4 px-4 sm:mx-0 sm:px-0">
               {workExperience.map((job, index) => (
                 <button
                   key={job.id}
                   onClick={() => setSelectedJob(index)}
-                  className={`w-full text-left p-4 rounded-lg transition-all duration-200 ${
+                  className={`flex-shrink-0 lg:w-full text-left p-3 sm:p-4 rounded-lg transition-all duration-200 min-w-[200px] lg:min-w-0 ${
                     selectedJob === index
                       ? 'bg-neutral-800 border-l-4 border-blue-400'
                       : 'bg-neutral-900/50 hover:bg-neutral-800/70'
@@ -118,9 +118,9 @@ export default function Work() {
             >
               {workExperience[selectedJob] && (
                 <div>
-                  <div className="mb-6">
-                    <div className="flex flex-wrap items-start justify-between mb-2">
-                      <h2 className="text-2xl font-bold text-white">
+                  <div className="mb-4 sm:mb-6">
+                    <div className="flex flex-col sm:flex-row sm:flex-wrap sm:items-start justify-between gap-2 mb-2">
+                      <h2 className="text-xl sm:text-2xl font-bold text-white">
                         {workExperience[selectedJob].position}
                       </h2>
                       <div className="flex items-center space-x-2 text-sm">
@@ -129,7 +129,7 @@ export default function Work() {
                         </span>
                       </div>
                     </div>
-                    <div className="text-lg text-neutral-300 mb-2">
+                    <div className="text-base sm:text-lg text-neutral-300 mb-2">
                       <TechIcon name="building" className="inline mr-2" />
                       {workExperience[selectedJob].company}
                     </div>
@@ -146,11 +146,11 @@ export default function Work() {
                   </div>
 
                   {/* Description */}
-                  <div className="mb-6">
-                    <h3 className="text-lg font-semibold text-white mb-3">Key Responsibilities</h3>
+                  <div className="mb-4 sm:mb-6">
+                    <h3 className="text-base sm:text-lg font-semibold text-white mb-2 sm:mb-3">Key Responsibilities</h3>
                     <ul className="space-y-2">
                       {workExperience[selectedJob].description.map((item, i) => (
-                        <li key={i} className="text-neutral-300 flex items-start">
+                        <li key={i} className="text-sm sm:text-base text-neutral-300 flex items-start">
                           <span className="text-blue-400 mr-2 mt-1.5 text-xs">▸</span>
                           {item}
                         </li>
@@ -159,8 +159,8 @@ export default function Work() {
                   </div>
 
                   {/* Technologies */}
-                  <div className="mb-6">
-                    <h3 className="text-lg font-semibold text-white mb-3">Technologies Used</h3>
+                  <div className="mb-4 sm:mb-6">
+                    <h3 className="text-base sm:text-lg font-semibold text-white mb-2 sm:mb-3">Technologies Used</h3>
                     <div className="flex flex-wrap gap-2">
                       {workExperience[selectedJob].technologies.map((tech) => (
                         <TechBadge key={tech} name={tech} />
@@ -170,7 +170,7 @@ export default function Work() {
 
                   {/* Achievements */}
                   <div>
-                    <h3 className="text-lg font-semibold text-white mb-3">Key Achievements</h3>
+                    <h3 className="text-base sm:text-lg font-semibold text-white mb-2 sm:mb-3">Key Achievements</h3>
                     <div className="space-y-2">
                       {workExperience[selectedJob].achievements.map((achievement, i) => (
                         <div key={i} className="text-neutral-300 flex items-center">
