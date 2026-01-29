@@ -15,6 +15,16 @@ const projects = [
   },
   {
     id: 2,
+    title: 'AI PDF Manipulator',
+    description: 'This is a web app which helps people study having various modes to enhance study. Advanced PDF manipulation features with AI-powered study tools.',
+    image: 'https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=800&h=400&fit=crop',
+    tags: ['React', 'AI', 'PDF Processing', 'Web Application', 'Study Tools'],
+    github: 'https://github.com/fister12/Ai-Pdf-Manipulator',
+    demo: 'https://ai-pdf-manipulator.vercel.app/',
+    status: 'Live'
+  },
+  {
+    id: 3,
     title: 'Machine Learning using C and C++',
     description: 'High-performance machine learning implementation using C and C++ for faster calculations compared to traditional Python-based ML libraries. Demonstrates the power of low-level programming for ML algorithms.',
     image: 'https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=800&h=400&fit=crop',
@@ -24,22 +34,12 @@ const projects = [
     status: 'Live'
   },
   {
-    id: 3,
+    id: 4,
     title: 'Notepad++ Clone',
     description: 'A feature-rich text editor clone of Notepad++ with collaborative editing capabilities. Includes syntax highlighting, file management, and real-time collaboration features for team-based text editing.',
     image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=400&fit=crop',
     tags: ['Java', 'GUI', 'Text Editor', 'Collaboration', 'File Management'],
     github: 'https://github.com/fister12/Notepadpp_clone',
-    demo: '#',
-    status: 'Live'
-  },
-  {
-    id: 4,
-    title: 'QR Code Generator',
-    description: 'A simple yet effective QR code generator that converts any data into QR codes using 8-bit encoding. Uses binary representation with 0 as black squares and 1 as white squares for clean QR code generation.',
-    image: 'https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800&h=400&fit=crop',
-    tags: ['Java', 'QR Code', 'Binary Encoding', 'Data Conversion', 'Image Processing'],
-    github: 'https://github.com/fister12/QRcodeGenerator',
     demo: '#',
     status: 'Live'
   },
